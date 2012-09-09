@@ -78,6 +78,18 @@ class TestCollatz (unittest.TestCase) :
         collatz_solve(r, w)
         self.assert_(w.getvalue() == "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
 
+    # -----
+    # find_cycle_length
+    # -----
+    
+    def test_find_cycle_length (self) :
+        result = collatz_find_cycle_length(5)
+        self.assert_(result == 6)
+        result = collatz_find_cycle_length(22)
+        self.assert_(result == 16)
+        result = collatz_find_cycle_length(2)
+        self.assert_(result == 2)
+
 # ----
 # main
 # ----
