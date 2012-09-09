@@ -44,6 +44,27 @@ def collatz_eval (i, j) :
     assert v > 0
     return v
 
+# -------------------------
+# collatz_find_cycle_length
+# -------------------------
+
+def collatz_find_cycle_length (num) :
+    """
+    num: integer input whose cycle length is to be calculated
+    return the cycle length of num as an integer
+    """
+    assert num > 0
+    if (num == 1) :
+        return 1
+    result = 0
+    while (num != 1) :
+        result += 1
+        if (num % 2 == 0) :
+            num /= 2
+        else :
+            num = 3 * num + 1
+    return result
+
 # -------------
 # collatz_print
 # -------------
