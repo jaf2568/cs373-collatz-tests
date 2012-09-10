@@ -54,9 +54,7 @@ def collatz_find_cycle_length (num) :
     return the cycle length of num as an integer
     """
     assert num > 0
-    if (num == 1) :
-        return 1
-    result = 0
+    result = 1
     while (num != 1) :
         result += 1
         if (num % 2 == 0) :
