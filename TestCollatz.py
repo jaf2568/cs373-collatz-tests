@@ -83,15 +83,15 @@ class TestCollatz (unittest.TestCase) :
     # -----
     
     def test_find_cycle_length_1 (self) :
-        result = collatz_find_cycle_length(5)
+        result = collatz_find_cycle_length(5, {1: 1})
         self.assert_(result == 6)
     
     def test_find_cycle_length_2 (self) :
-        result = collatz_find_cycle_length(22)
+        result = collatz_find_cycle_length(22, {1: 1})
         self.assert_(result == 16)
     
     def test_find_cycle_length_3 (self) :
-        result = collatz_find_cycle_length(2)
+        result = collatz_find_cycle_length(2, {1: 1})
         self.assert_(result == 2)
 
 # ----
