@@ -201,22 +201,22 @@ class TestCollatz (unittest.TestCase) :
         self.assert_(w.getvalue() == "10 1 20\n200 100 125\n210 201 89\n1000 900 174\n")
 
     def test_solve_3 (self) :
-        r = StringIO.StringIO("1 1\n")
+        r = StringIO.StringIO("999999 1\n")
         w = StringIO.StringIO()
         collatz_solve(r, w)
-        self.assert_(w.getvalue() == "1 1 1\n")
+        self.assert_(w.getvalue() == "999999 1 525\n")
 
     def test_solve_4 (self) :
-        r = StringIO.StringIO("1 1\n2 2\n12 14\n1 11\n")
+        r = StringIO.StringIO("1 999999\n")
         w = StringIO.StringIO()
         collatz_solve(r, w)
-        self.assert_(w.getvalue() == "1 1 1\n2 2 2\n12 14 18\n1 11 20\n")
+        self.assert_(w.getvalue() == "1 999999 525\n")
 
     def test_solve_5 (self) :
-        r = StringIO.StringIO("1 2\n1 2\n1 2\n1 12\n")
+        r = StringIO.StringIO("1 1\n1 2\n1 2\n1 2\n1 12\n")
         w = StringIO.StringIO()
         collatz_solve(r, w)
-        self.assert_(w.getvalue() == "1 2 2\n1 2 2\n1 2 2\n1 12 20\n")
+        self.assert_(w.getvalue() == "1 1 1\n1 2 2\n1 2 2\n1 2 2\n1 12 20\n")
         
 # ----
 # main
