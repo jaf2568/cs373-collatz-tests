@@ -39,10 +39,17 @@ def collatz_eval (i, j) :
     """
     assert i > 0
     assert j > 0
+    assert i < 1000000
+    assert j < 1000000
+    lower = i
+    upper = j
+    if (i > j) :
+        lower = j
+        upper = i
     cycle_length_cache = {1: 1}   # dictionary containing mapping from an integer to its cycle length
     current_cycle_length = 0
     v = 0
-    for num in xrange(i, j + 1) :
+    for num in xrange(lower, upper + 1) :
         current_cycle_length = collatz_find_cycle_length(num, cycle_length_cache)
         if (current_cycle_length > v) :
             v = current_cycle_length
@@ -58,7 +65,7 @@ def collatz_find_cycle_length (num, cycle_length_cache) :
     num is the integer input whose cycle length is to be calculated
     return the cycle length of num as an integer
     """
-    assert num > 0 and num < 1000000
+    assert num > 0
     assert cycle_length_cache != None
     result = 0
     if (num in cycle_length_cache) :
